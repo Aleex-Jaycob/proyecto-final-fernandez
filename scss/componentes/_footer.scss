@@ -1,0 +1,20 @@
+@import "../base/variables";
+@import "../base/mixin";
+
+/*Estilos de Footer*/
+footer{
+    @include flex-footer;
+    div{
+        p{
+            @include parrafos;
+        }
+        a{
+            img{
+                width: $width-icono;
+                margin: $margin-icono;
+                border-radius: $border-radius-icono;
+                box-shadow: $box-shadow-icono;
+            }
+        }
+    }    
+}

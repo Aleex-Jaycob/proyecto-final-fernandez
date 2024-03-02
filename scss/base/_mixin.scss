@@ -1,0 +1,112 @@
+@import "variables";
+
+@mixin imagenes{
+    width: $width-cienporciento;
+    height: 100%;
+    object-fit: cover;
+}
+
+@mixin parrafos{
+    color: $color-letra;
+    text-align: center;
+    font-family: $font-family;
+}
+
+@mixin grid ($height,$grid-template-columns,$grid-template-rows,$gap,$margin){
+    height: $height;
+    display: grid;
+    grid-template-columns: $grid-template-columns;
+    grid-template-rows: $grid-template-rows;
+    gap: $gap;
+    margin: $margin;
+}
+
+@mixin flex-footer{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+@mixin flex-biografia{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin biografia-parrafo{
+    color: $color-letra;
+    text-align: center;
+    @include tablet{
+        font-size: 18px;
+    }
+}
+
+@mixin formulario{
+    padding: 20px 20px;
+    box-shadow: $box-shadow-formulario $color-sombra;
+    border-radius: $border-radius-formulario;
+    text-align: center;
+    width: $width-form;
+    margin-bottom: 20px;
+}
+
+@mixin flex-formulario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-family;
+    color: $color-letra;
+    @include tablet{
+        justify-content: space-evenly;
+    }
+}
+
+@mixin flex-formulario-div{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+@mixin formulario-h2{
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+    color: $color-letra;
+    font-weight: $font-weight;
+    margin-bottom: $margin-bottom-form-h2;
+    @include tablet{
+        font-size: 18px;
+    }
+}
+
+@mixin formulario-textarea{
+    padding: 10px 20px;
+    border-radius: $border-radius-form-textarea;
+    margin-bottom: $margin-bottom-form-textarea;
+    background-color: $color-beige;
+    border: $border-formulario-textarea solid $color-negro;
+    color: $color-negro;
+    outline: none;
+}
+
+@mixin btn-formulario{
+    color: $color-negro;
+    border: $border-btn-formulario;
+    background-color: $color-bc-de-btn;
+    box-shadow: $box-shadow-btn-formulario  $color-sombra;
+    cursor: pointer;
+}
+
+// Media Queries
+@mixin tablet{
+    @media screen and (min-width:600px){
+        @content;
+    }
+}
+
+@mixin desktop{
+    @media screen and (min-width:1024px){
+        @content;
+    }
+}

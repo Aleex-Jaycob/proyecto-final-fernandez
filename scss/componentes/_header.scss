@@ -1,0 +1,28 @@
+@import "../base/variables";
+@import "../base/mixin";
+
+/*Estilos de header*/
+header{
+    .logo {
+        width: $width-logo;
+    }
+    h1{
+        color: $color-letra;
+        text-align: center;
+        font-size: 18px;
+        padding: 10px;
+        margin: $margin-h1;
+        font-family: $font-family;
+        font-weight: $font-weight;
+        text-decoration: underline;
+        @include tablet {
+            font-size: 20px;
+        }
+    }
+    p{
+        @include parrafos;
+        @include tablet{
+            font-size: 18px;
+        }
+    }
+}

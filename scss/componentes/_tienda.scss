@@ -1,0 +1,47 @@
+@import "../base/mixin";
+@import "../base/variables";
+
+/*Estilos de Tienda*/
+.productos-tienda{
+    @include grid(80%,repeat(2, 1fr), repeat(2, 1fr),1rem, 2rem 2rem);
+    justify-content: center;
+    align-items: start;
+    @include tablet{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);    
+    }
+    @include desktop{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+    div{
+        .producto-5, .producto-6, .producto-7, .producto-8{
+            display: none;
+            @include tablet{
+                display: block;
+            }
+        }
+        .p5, .p6, .p7, .p8{
+            display: none;
+            @include tablet{
+                display: block;
+            }
+        } 
+        img{
+            @include imagenes;
+            border-radius: $border-radius-iframe;
+            box-shadow: 0 0 20px black;
+            cursor: pointer;
+        }
+        img:hover{
+            transform: scale(1.1,1.1);
+        }
+        p{
+            @include parrafos;
+            font-size: 15px;
+            @include tablet{
+                font-size: 18px;
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+@import "../base/mixin";
+@import "../base/variables";
+
+/*Estilos de Estadio*/
+.contenedor-estadio{
+    @include grid(75%,1fr, repeat(1, 1fr), 1rem,3rem 2rem);
+    @include tablet{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        margin: 2rem 1rem;
+        row-gap: 2rem;
+    }
+    @include desktop{
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: repeat(2, 1fr);
+    }
+    div{
+        .img-galeria2, .img-galeria4, .img-galeria6{
+            display: none;
+            @include tablet{
+                display: block;
+            } 
+        }
+        .parrafo2, .parrafo4, .parrafo6{
+            display: none;
+            @include tablet{
+                display: block;
+            }
+        }
+        img{
+            @include imagenes;
+            border: 2px solid black;
+            box-shadow: 0 0 20px black;
+            border-radius: $border-radius-iframe;    
+        }
+        img:hover{
+            transform: scale(1.1,1.1);
+        }
+        p{
+            @include parrafos;
+        }    
+    } 
+}
